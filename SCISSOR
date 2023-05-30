@@ -1,0 +1,70 @@
+(Game: scissor, rock, paper) Write a program that plays the popular scissor-rockpaper
+game. (A scissor can cut a paper, a rock can knock a scissor, and a paper can wrap a
+rock.) The program randomly generates a number 0, 1, or 2 representing scissor, rock,
+and paper. The program prompts the user to enter a number 0, 1, or 2 and displays a
+message indicating whether the user or the computer wins, loses, or draws.
+
+CODE:
+import java.util.Random;
+import java.util.Scanner;
+
+public class Q5 {
+
+public static void main(String[] args) {
+
+final int scissor = 0;
+final int rock = 1;
+final int paper = 2;
+
+Scanner sc = new Scanner(System.in);
+Random random = new Random();
+
+System.out.print(&quot;Scissor (0), rock (1), paper (2): &quot;);
+
+int user = sc.nextInt();
+
+if (user == 0 || user == 1 || user == 2) {
+
+int comp = random.nextInt(3);
+switch (user) {
+case 0:
+if (comp == scissor) {
+
+System.out.println(&quot;The computer is scissor and you are scissor, it&#39;s
+
+a draw.&quot;);
+} else if (comp == rock) {
+System.out.println(&quot;The computer is rock and you are scissor, you lost.&quot;);
+} else if (comp == paper) {
+System.out.println(&quot;The computer is paper and you are scissor, you won.&quot;);
+
+}
+break;
+case 1:
+if (comp == scissor) {
+System.out.println(&quot;The computer is scissor and you are rock, you won.&quot;);
+} else if (comp == rock) {
+System.out.println(&quot;The computer is rock and you are rock, its a draw.&quot;);
+} else if (comp == paper) {
+System.out.println(&quot;The computer is paper and you are rock, you lost.&quot;);
+}
+break;
+case 2:
+if (comp == scissor) {
+System.out.println(&quot;The computer is scissor and you are paper, you lost.&quot;);
+} else if (comp == rock) {
+System.out.println(&quot;The computer is rock and you are paper, you won.&quot;);
+} else if (comp == paper) {
+System.out.println(&quot;The computer is paper and you are paper, it&#39;s a draw.&quot;);
+}
+break;
+
+}
+
+} else {
+System.out.println(&quot;Computer wins,Since you input an invalid value!&quot;);
+}
+
+}
+
+}
